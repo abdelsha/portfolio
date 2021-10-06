@@ -1,0 +1,66 @@
+.Profile{
+    padding: 0;
+    margin: 0 0 8px;
+    overflow: visible;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+}
+.Background{
+    
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.Profile button{
+    background-image: url("./backgroundimage.jpeg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    color: #958b7b;
+
+}
+.Profile button t{
+    display: flex;
+    flex: 1;
+    
+}
+
+.Profile button img{
+    
+    
+    
+    width: 100px;
+    height: 100px;
+   
+    border-radius: 50%;
+    padding: 10px 0;
+
+    
+}
+.Profile a{
+
+    font-size: 24px;
+    
+}
+
+.Description{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    
+}
+
+.Description p{
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    margin: 0 10px 10px 20px;
+}
+.Description p:nth-child(n+3){
+    margin-top: 10px;
+}

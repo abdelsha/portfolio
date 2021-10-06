@@ -1,0 +1,101 @@
+.AccountPage{
+    margin-top: 25px;
+}
+.Accounts{
+    display: flex;
+    flex-direction: column;
+}
+.Profile{
+    padding: 0;
+    margin: 0 0 8px;
+    overflow: visible;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    opacity: 70%;
+}
+.Profile:hover{
+    opacity: 100%;
+}
+.Background{
+    
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.Profile button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    color: #958b7b;
+
+}
+.Profile button t{
+    display: flex;
+    flex: 1;
+    
+}
+
+.Profile button img{
+    width: 100px;
+    height: 100px;
+   
+    border-radius: 50%;
+    padding: 10px 0;
+
+    
+}
+.Profile a{
+
+    font-size: 24px;
+    
+}
+
+.Description{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    
+}
+
+.Description p{
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    margin: 0 10px 10px 20px;
+}
+.Rowone{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+    text-align: left;
+}
+.Rowone a:hover{
+    color: #111c46;
+}
+
+.Rowone a{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: rgba(17, 28, 70,0.7)
+    
+}
+.Rowone p{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+    color: rgba(17, 28, 70,0.7);
+}
+.Rowone p:hover{
+    color: #111c46;
+}
+.Rowone input{
+    border-radius: 24px;
+    border-color: rgba(0,0,0,0.5);
+}

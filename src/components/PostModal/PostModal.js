@@ -69,7 +69,7 @@ function PostModal (props) {
               
               <div className={classes.UserInfo}>
                   {props.user.photoURL ? (< img src={props.user.photoURL} />)
-                  :(<img src="/images/user.svg" all="" />)}
+                  :(<img src="/images/user.png" all="" />)}
                 
                 <span>{props.user.displayName}</span>
               </div>

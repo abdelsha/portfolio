@@ -28,10 +28,11 @@ function Main_Posts(props){
         <div className={classes.Article}>
           <div className={classes.SharedActor}>
             <a>
+              {console.log(props.user)}
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} all="" />
               ) : (
-                <img src={article.actor.image}></img>
+                <img src="/images/user.png" all=""></img>
               )}
               <div>
                 <span>{article.actor.title}</span>

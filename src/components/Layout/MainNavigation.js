@@ -17,7 +17,7 @@ function MainNavigation(props) {
     
     return (
         <Aux >
-            {!props.user && <Redirect to = '/Accounts'/>}
+            {!props.user && <Redirect to = '/'/>}
             <header className={classes.header}>
 
                 <nav>
@@ -43,28 +43,31 @@ function MainNavigation(props) {
 
                     <Link to='/Contact'>Contact</Link>
 
-
-                    <Link to='/Accounts'>Accounts/Sign in</Link>
+                    {userstat ? (<Link to='/Accounts'>Accounts</Link>)
+                    :(<Link to='/Accounts'>Sign in</Link>)}
+                    
 
 
                 </div>
                 <div className={classes.User}>
                     <div>
-                        <a>
+                        
                         {userstat && userstat.photoURL ?
-                        (<img className={classes.UserImage} src={props.user.photoURL} all=""/>
+                        (
+                            <div>
+                                <img className={classes.UserImage} src={props.user.photoURL} all=""/>
+                            <span>Me
+                            <img  src="/images/down-icon.svg" all=""></img>
+                            </span>
+                            
+                            <p onClick={()=> dispatch(signOutApi())} >
+                            Sign Out
+                            </p>
+                        </div>
                         ):(
-                        <img className={classes.UserImage} src="/images/user.svg"></img>
+                        <img className={classes.UserImagetwo} src="/images/user1.svg" all=""></img>
                         )}
-
-
-                        <span>Me
-                        <img  src="/images/down-icon.svg"></img>
-                        </span>
-                        </a>
-                        <p onClick={()=> dispatch(signOutApi())} >
-                        Sign Out
-                        </p>
+                        
                     </div>
                     
                 </div>

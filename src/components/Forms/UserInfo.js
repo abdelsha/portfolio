@@ -14,7 +14,7 @@ function UserInfo(props) {
                   {props.user && props.user.photoURL ? (
                     <img src={props.user.photoURL} all="" />
                   ) : (
-                    <img src="/images/user.svg" all= ""></img>
+                    <img src="/images/user.png" all= ""></img>
                   )}
                 </span>
               </button>

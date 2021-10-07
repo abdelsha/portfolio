@@ -12,7 +12,7 @@ function Bio(props){
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} all="" />
               ) : (
-                <img src="/images/user.svg"></img>
+                <img src="/images/user.png"></img>
               )}
             </span>
           </button>

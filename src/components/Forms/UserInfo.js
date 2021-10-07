@@ -1,27 +1,27 @@
 import React from "react";
 import CommonCard from "../../UI/Card/CommonCard";
-import './UserInfo.css';
+import classes from './UserInfo.module.css';
 import {connect} from 'react-redux';
 
 function UserInfo(props) {
     return (
-      <div className="AccountPage">
+      <div className={classes.AccountPage}>
         <CommonCard>
-          <div className="Accounts">
-            <div className="Profile">
+          <div className={classes.Accounts}>
+            <div className={classes.Profile}>
               <button>
                 <span>
                   {props.user && props.user.photoURL ? (
                     <img src={props.user.photoURL} all="" />
                   ) : (
-                    <img src="/images/user.svg"></img>
+                    <img src="/images/user.svg" all= ""></img>
                   )}
                 </span>
               </button>
               <a>Amr Shakour</a>
             </div>
-            <div className="Description">
-              <div className="Rowone">
+            <div className={classes.Description}>
+              <div className={classes.Rowone}>
                 <a>
                   First Name:
                   <input type="text" placeholder="First Name" />
@@ -32,7 +32,7 @@ function UserInfo(props) {
                 </a>
               </div>
 
-              <div className="Rowone">
+              <div className={classes.Rowone}>
                 <a>
                   Email address:
                   <input type="text" placeholder="something@gmail.com" />
@@ -43,7 +43,7 @@ function UserInfo(props) {
                 </a>
               </div>
 
-              <div className="Rowone">
+              <div className={classes.Rowone}>
                 <a>
                   Github:
                   <input type="text" placeholder="Github-Link" />
@@ -53,7 +53,7 @@ function UserInfo(props) {
                   <input type="text" placeholder="Linkedin-Link" />
                 </a>
               </div>
-              <div className="Rowone">
+              <div className={classes.Rowone}>
                 <a>
                   Website:
                   <input type="text" placeholder="Website-url" />
@@ -63,7 +63,7 @@ function UserInfo(props) {
                   <input type="text" placeholder="Facebook-link" />
                 </a>
               </div>
-              <div className="Rowone">
+              <div className={classes.Rowone}>
                 <p>
                   Bio:
                   <input

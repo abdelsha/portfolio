@@ -40,7 +40,7 @@ function Main_Share(props) {
                 all=""
               />
             ) : (
-              <img  src="/images/user.svg"></img>
+              <img  src="/images/user.svg" all=""></img>
             )}
             <button onClick={handleClick} disabled= {props.loading? true:false}
             >Start a Post...</button>

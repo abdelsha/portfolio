@@ -50,18 +50,18 @@ function MainNavigation(props) {
                 </div>
                 <div className={classes.User}>
                     <div>
-                        <a>
+                        
                         {userstat && userstat.photoURL ?
                         (<img className={classes.UserImage} src={props.user.photoURL} all=""/>
                         ):(
-                        <img className={classes.UserImage} src="/images/user.svg"></img>
+                        <img className={classes.UserImage} src="/images/user.svg" all=""></img>
                         )}
 
 
                         <span>Me
-                        <img  src="/images/down-icon.svg"></img>
+                        <img  src="/images/down-icon.svg" all=""></img>
                         </span>
-                        </a>
+                        
                         <p onClick={()=> dispatch(signOutApi())} >
                         Sign Out
                         </p>

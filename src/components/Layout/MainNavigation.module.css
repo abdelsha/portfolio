@@ -98,18 +98,15 @@
   height: 60px;
   border-radius: 24px;
   cursor: pointer;
-  opacity: 50%;
+  margin: auto;
   transition-duration: 250ms;
-  display: flex;
+  display: block;
   flex-direction: column;
   color: white;
   
   
 }
-.User:hover{
-  
-  opacity: 100% ;
-}
+
   
 .User:hover p{
   color: rgba(0,0,0,1);
@@ -119,7 +116,7 @@
 }
 @media (max-width: 768px) {
   .User {
-    margin-top: 60px;
+    
     width: 80px;
     margin-right: 0;
     justify-content: center;
@@ -130,8 +127,21 @@
 .UserImage{
   width: 40px;
   border-radius: 24px;
-  display: flex;
+  display: block;
   justify-content: center;
+  opacity: 0.5;
+  margin-left: 7px;
+}
+.User:hover img{
+  opacity: 0.9;
+}
+.User span{
+  display: block;
+  color: rgb(235, 233, 233,0.5);
+  margin-left: 15px;
+}
+.User:hover span{
+  color: rgb(235, 233, 233,1);
 }
 .User p{
   color: rgba(0,0,0,0);

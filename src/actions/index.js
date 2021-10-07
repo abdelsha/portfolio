@@ -2,7 +2,7 @@ import { auth, provider, storage } from '../firebase';
 import db from '../firebase';
 import {SET_USER, SET_LOADING_STATUS, GET_ARTICLES} from './actionType';
 
-
+const email= "amrshakour97@gmail.com";
 export const setUser = (payload) => ({
     type: SET_USER,
     user: payload,
@@ -22,7 +22,16 @@ export function signInApi() {
     return (dispatch) => {
         auth.signInWithPopup(provider)
         .then((payload)=>{
-            dispatch(setUser(payload.user));
+            console.log(payload.user.email);
+
+            if (payload.user.email === email) {
+                dispatch(setUser(payload.user))
+            }else {
+                console.log("i am here")
+                alert('You are not an authorized user');
+                dispatch(setUser(null));
+            };
+            
         })
         .catch( (error) => alert(error.message));
     };
@@ -31,9 +40,13 @@ export function signInApi() {
 export function getUserAuth() {
     return (dispatch) => {
         auth.onAuthStateChanged(async (user) => {
-            if(user){
+            if(user && user.email==email){
+                //console.log(user);
                 dispatch(setUser(user));
+            }else{
+                dispatch(setUser(null));
             }
+
         });
     }
 }

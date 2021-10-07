@@ -8,13 +8,13 @@ function Bio(props){
       <CommonCard>
         <div className={classes.Profile}>
           <button>
-            <t>
+            <span>
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} all="" />
               ) : (
                 <img src="/images/user.svg"></img>
               )}
-            </t>
+            </span>
           </button>
           <a>Amr Shakour</a>
         </div>

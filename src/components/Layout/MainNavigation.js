@@ -17,7 +17,7 @@ function MainNavigation(props) {
     
     return (
         <Aux >
-            {!props.user && <Redirect to = '/Accounts'/>}
+            {!props.user && <Redirect to = '/'/>}
             <header className={classes.header}>
 
                 <nav>

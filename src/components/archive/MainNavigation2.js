@@ -9,7 +9,7 @@ function MainNavigation(){
                 
                 <nav>
                     <ul>
-                        <t className={classes.logo}>AS</t>
+                        <span className={classes.logo}>AS</span>
 
                         <li>
                             <Link to ='/'>Home</Link>

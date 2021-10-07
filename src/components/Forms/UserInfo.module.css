@@ -4,6 +4,7 @@
 .Accounts{
     display: flex;
     flex-direction: column;
+    font-size: 36px;
 }
 .Profile{
     padding: 0;
@@ -89,11 +90,65 @@
     flex-grow: 1;
     text-align: center;
     color: rgba(17, 28, 70,0.7);
+    
 }
+
 .Rowone p:hover{
     color: #111c46;
 }
 .Rowone input{
     border-radius: 24px;
     border-color: rgba(0,0,0,0.5);
+}
+.Rowone p textarea{
+    height: 100px;
+    resize: none;
+    border-radius: 10px;
+    border:solid rgba(8, 7, 80,0.3)
+}
+.Experience p{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+    color: rgba(17, 28, 70,0.7);
+}
+.Experience p:hover{
+    color: #111c46;
+}
+.Experience textarea{
+    border-radius: 5px;
+    border-color: rgba(0,0,0,0.5);
+    resize: none;
+    height: 15px;
+}
+
+.Descriptionexp textarea{
+    height: 120px;
+}
+
+.headers{
+    font-size: 24px;
+}
+
+.submitone{
+    
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+}
+
+.submitone button{
+    border-radius: 24px;
+    background-color: white;
+    padding: 7px 10px;
+    border-color: rgba(0,0,0,0.5);
+}
+.submitone button:hover{
+    background-color: rgba(8, 7, 80,1);
+    color: white;
+    transition-duration: 200ms;
 }

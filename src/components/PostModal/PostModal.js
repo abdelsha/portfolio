@@ -154,6 +154,9 @@ const mapStateToProps= (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    postArticle: (payload) => dispatch(postArticleApi(payload)),
+    postArticle: (payload) => {
+      //console.log(payload)
+      dispatch(postArticleApi(payload))
+    },
 });
 export default connect (mapStateToProps, mapDispatchToProps)(PostModal);

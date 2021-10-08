@@ -7,57 +7,76 @@ import {getArticlesAPI, getExperienceAPI} from "../actions"
 import ReactPlayer from "react-player";
 
 
-function Experience (props) {
-    
-    
-    useEffect(() => {
-        props.getExperience();
-        
-     }, []);
+function Experience(props) {
+  let text = "";
 
+  useEffect(() => {
+    props.getExperience();
+  }, []);
 
-    return <div className={classes.main}>
-        <div className={classes.Layout}>
+  return (
+    <div className={classes.main}>
+      <div className={classes.Layout}>
         <p>My Experience</p>
 
-    <div className={classes.Loading}>
-      {props.loading >0 && <img className= {classes.LoadBar} src="/images/spin-loader.svg" />}
-    
-    
-    {console.log(props.experience.map((experience, key)=>{
-        console.log(experience)
-    }))}
-    {props.experience.length >0 && props.experience.map((experience,key) => (
-      
-      <div className={classes.CommonCard}>
-      
-      <div className={classes.Content}>
-        <div className={classes.Article}>
-          
-          <div className={classes.CompanyName}>
-            {experience.company}
-          </div>
-          <div className={classes.Duration}>
-              {experience.duration}
-          </div>
-        </div>
-        <div className={classes.Position}>
-            {experience.position}
-          </div>
-        <div className={classes.CompanyDescription}>
-            <p>{experience.description}</p>
+        <div className={classes.Loading}>
+          {props.loading > 0 && (
+            <img className={classes.LoadBar} src="/images/spin-loader.svg" />
+          )}
+
+          {props.experience.length > 0 &&
+            props.experience.map((experience, key) => (
+              <div>
+                  {experience.duration? (
+                      <div className={classes.CommonCard}>
+                      <div className={classes.Content}>
+                        <div className={classes.Article}>
+                          <div className={classes.CompanyName}>
+                            {experience.company}
+                          </div>
+                          <div className={classes.Duration}>
+                            {experience.duration}
+                          </div>
+                        </div>
+                        <div className={classes.Position}>
+                          {experience.position}
+                        </div>
+                        <div className={classes.CompanyDescription}>
+                          <p className={classes.newline}>
+                            {experience.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>  
+                  ):(
+                    <div className={classes.CommonCard}>
+                    <div className={classes.Content}>
+                      <div className={classes.Article}>
+                        <div className={classes.CompanyName}>
+                          {experience.company}
+                        </div>
+                        <div className={classes.Duration}>
+                          {experience.duration}
+                        </div>
+                      </div>
+                      <div className={classes.Position}>
+                        {experience.position}
+                      </div>
+                      <div className={classes.CompanyDescription}>
+                        <p className={classes.newline}>
+                          {experience.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>   
+                  )}
+                
+              </div>
+            ))}
         </div>
       </div>
     </div>
-    ))}
-    
-    </div>
-  
-
-
-        </div>
-       
-    </div>
+  );
 }
 
 

@@ -68,13 +68,13 @@
 @media (max-width: 768px){
     .Skills{
         margin: 10px 0;
-        font-size: 14px;
-        padding: 0 15px;
+        font-size: 12px;
+        padding: 0 45px 0 45px;
     }
 }
 .Skills li{
     width: 170px;
-    margin: 10px;
+    margin: 5px;
     text-align: left;
 }
 @media (max-width: 768px){

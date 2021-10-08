@@ -32,12 +32,12 @@ export function signInApi() {
     return (dispatch) => {
         auth.signInWithPopup(provider)
         .then((payload)=>{
-            console.log(payload.user.email);
+            //console.log(payload.user.email);
 
             if (payload.user.email === email) {
                 dispatch(setUser(payload.user))
             }else {
-                console.log("i am here")
+                //console.log("i am here")
                 alert('You are not an authorized user');
                 dispatch(setUser(null));
             };
@@ -84,7 +84,7 @@ export function postArticleApi(payload) {
             const progress =
                 (snapshot.bytesTransferred/snapshot.totalBytes) *100;
 
-            console.log(`progress: ${progress}%`);
+            //console.log(`progress: ${progress}%`);
             if (snapshot.state === "RUNNING") {
                 console.log(`progress: ${progress}%`);
             }
@@ -201,7 +201,7 @@ export function getAProfileAPI() {
         db.collection("profile")
         .orderBy("profile.date","desc")
         .onSnapshot((snapshot) => {
-            console.log(snapshot.docs[0]);
+            //console.log(snapshot.docs[0]);
             payload= snapshot.docs.map((doc) => doc.data());;
             //console.log(payload)
             dispatch(getProfile(payload));
@@ -217,7 +217,7 @@ export function getExperienceAPI() {
         .orderBy("actor.date","desc")
         .onSnapshot((snapshot) => {
             payload= snapshot.docs.map((doc) => doc.data());
-            console.log(payload)
+            //console.log(payload)
             dispatch(getExperience(payload));
         });
     };

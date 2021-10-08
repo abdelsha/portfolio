@@ -20,6 +20,7 @@ function UserInfo(props) {
   const [company, setCompanyText] = useState("");
   const [duration, setDurationText] = useState("");
   const [description, setDescriptionText] = useState("");
+  const [position, setPositionText]=useState("");
   
 
 
@@ -77,6 +78,7 @@ function UserInfo(props) {
         company:company,
         duration:duration,
         description:description,
+        position:position,
       };
       props.updateExperience(payload);
       resettwo(e);
@@ -87,6 +89,7 @@ function UserInfo(props) {
      setCompanyText("");
      setDurationText("");
      setDescriptionText("");
+     setPositionText("");
      handleClick(e);
    };
   
@@ -180,6 +183,15 @@ function UserInfo(props) {
                 <textarea value={company} onChange={(e) => setCompanyText(e.target.value)} type="text" placeholder="What is the company name" />
               </p>
               <p>
+                Position
+                <textarea
+                  value={position}
+                  onChange={(e) => setPositionText(e.target.value)}
+                  type="text"
+                  placeholder="Enter the positon"
+                />
+              </p>
+              <p>
                 Duration
                 <textarea
                   value={duration}
@@ -188,6 +200,7 @@ function UserInfo(props) {
                   placeholder="Enter the duration, ex. Dec 2017 - Jan 2019"
                 />
               </p>
+              
               <p className={classes.Descriptionexp}>
                 Description:
                 <textarea value ={description} onChange={(e) => setDescriptionText(e.target.value)} type="text" placeholder="What did you do?" />

@@ -41,6 +41,9 @@ function Experience (props) {
               {experience.duration}
           </div>
         </div>
+        <div className={classes.Position}>
+            {experience.position}
+          </div>
         <div className={classes.CompanyDescription}>
             <p>{experience.description}</p>
         </div>

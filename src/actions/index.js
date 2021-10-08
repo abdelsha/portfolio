@@ -169,6 +169,7 @@ export function updateExperienceApi(payload) {
               company:payload.company,
               duration:payload.duration,
               description:payload.description,
+              position:payload.position,
 
               
             })

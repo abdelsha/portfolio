@@ -1,6 +1,6 @@
 import { auth, provider, storage } from '../firebase';
 import db from '../firebase';
-import {SET_USER, SET_LOADING_STATUS, GET_ARTICLES} from './actionType';
+import {SET_USER, SET_LOADING_STATUS, GET_ARTICLES, GET_EXPERIENCE, GET_PROFILE} from './actionType';
 
 const email= "amrshakour97@gmail.com";
 export const setUser = (payload) => ({
@@ -18,16 +18,26 @@ export const getArticles = (payload) => ({
     payload: payload,
 });
 
+export const getExperience =(payload) => ({
+    type: GET_EXPERIENCE,
+    payload: payload,
+});
+
+export const getProfile = (payload) => ({
+    type: GET_PROFILE,
+    payload:payload,
+})
+
 export function signInApi() {
     return (dispatch) => {
         auth.signInWithPopup(provider)
         .then((payload)=>{
-            console.log(payload.user.email);
+            //console.log(payload.user.email);
 
             if (payload.user.email === email) {
                 dispatch(setUser(payload.user))
             }else {
-                console.log("i am here")
+                //console.log("i am here")
                 alert('You are not an authorized user');
                 dispatch(setUser(null));
             };
@@ -74,7 +84,7 @@ export function postArticleApi(payload) {
             const progress =
                 (snapshot.bytesTransferred/snapshot.totalBytes) *100;
 
-            console.log(`progress: ${progress}%`);
+            //console.log(`progress: ${progress}%`);
             if (snapshot.state === "RUNNING") {
                 console.log(`progress: ${progress}%`);
             }
@@ -115,6 +125,61 @@ export function postArticleApi(payload) {
     };
 }
 
+export function updateProfileApi(payload) {
+    return (dispatch) => {
+        dispatch(setLoading(true));
+        
+            db.collection(`profile`).add({
+              actor: {
+                description: payload.user.email,
+                title: payload.user.displayName,
+                date: payload.timestamp,
+                image: payload.user.photoURL,
+              },
+              firstName: payload.firstName,
+              lastName: payload.lastName,
+              email: payload.email,
+              phoneNumber: payload.phoneNumber,
+              github: payload.github,
+              linkedin: payload.linkedin,
+              website: payload.website,
+              facebook: payload.facebook,
+              bio: payload.bio,
+
+              
+            })
+            dispatch(setLoading(false));
+        
+    }
+        
+    
+}
+
+export function updateExperienceApi(payload) {
+    return (dispatch) => {
+        dispatch(setLoading(true));
+        
+            db.collection(`experience`).add({
+              actor: {
+                description: payload.user.email,
+                title: payload.user.displayName,
+                date: payload.timestamp,
+                image: payload.user.photoURL,
+              },
+              company:payload.company,
+              duration:payload.duration,
+              description:payload.description,
+              position:payload.position,
+
+              
+            })
+            dispatch(setLoading(false));
+        
+    }
+        
+    
+}
+
 export function getArticlesAPI() {
     return (dispatch) => {
         let payload;
@@ -129,3 +194,31 @@ export function getArticlesAPI() {
     };
 }
 
+export function getAProfileAPI() {
+    return (dispatch) => {
+        let payload;
+        
+        db.collection("profile")
+        .orderBy("profile.date","desc")
+        .onSnapshot((snapshot) => {
+            //console.log(snapshot.docs[0]);
+            payload= snapshot.docs.map((doc) => doc.data());;
+            //console.log(payload)
+            dispatch(getProfile(payload));
+        });
+    };
+}
+
+export function getExperienceAPI() {
+    return (dispatch) => {
+        let payload;
+        
+        db.collection("experience")
+        .orderBy("actor.date","desc")
+        .onSnapshot((snapshot) => {
+            payload= snapshot.docs.map((doc) => doc.data());
+            //console.log(payload)
+            dispatch(getExperience(payload));
+        });
+    };
+}

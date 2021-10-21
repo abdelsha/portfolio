@@ -1,4 +1,10 @@
 .Container {
     grid-area: main;
+    margin-top: 25px;
+}
+@media (max-width:768px){
+    .Container{
+        margin-top: 0px;
+    }
 }
 

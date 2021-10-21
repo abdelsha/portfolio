@@ -28,7 +28,7 @@ function Main_Posts(props){
         <div className={classes.Article}>
           <div className={classes.SharedActor}>
             <a>
-              {console.log(props.user)}
+              
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} all="" />
               ) : (

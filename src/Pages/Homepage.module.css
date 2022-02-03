@@ -10,7 +10,9 @@
     font-weight: 200;
     line-height: 70px;
     margin-top: -25px;
-    background-color: rgba(222, 229, 241,0.5);
+    background-color: rgb(15, 21, 45,0.7);
+    font-family: "Cairo","Poppins", sans-serif;
+    color:rgba(252, 185, 0,0.9);
     
     
     bottom: 0;

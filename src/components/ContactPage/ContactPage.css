@@ -4,12 +4,13 @@
     text-align: center;
 }
 .Main {
-    color: #111c46;
+    color:rgba(252, 185, 0);
+
     width: 100%;
     font-size: 40px;
     font-weight: 200;
     line-height: 70px;
-    background-color: rgba(222, 229, 241,0.5);
+    background-color: rgb(15, 21, 45,0.7);
     position: fixed;
     top: 5rem;
     bottom: 0;
